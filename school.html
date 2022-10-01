@@ -1,224 +1,431 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>School Info</title>
-    <link rel="icon" type="image/x-icon" href="images/translogo.png">
-    <style>
-      body {background-color: lightyellow;}
-      th{
-        background-color:gold;
-      }
-      tr:nth-child(even) {
-        background-color: beige;
-      }
-      img {
-        border: 2px solid gold;
-        outline: 2px solid maroon;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      h1 {
-        color:maroon;
-        font-size:50px;
-        font-family:courier;
-        text-align:center;
-        border: 2px solid gold;
-        padding: 10px
-      }
-      h2 {
-        color:black;
-        border: 2px solid maroon;
-        text-align:center;
-      }
-      a:link {
-        color: blue;
-        text-decoration: none;
-      }
-      a:visited {
-        color:blue;
-        text-decoration: none;
-      }
-      a:hover {
-        color:darkblue;
-        text-decoration:none;
-      }
-      </style>
-  </head>
-  <body>
-    <h1>The Bishop's School Info</h1>
+<html lang="en">
+<head>
+  <title>School Hub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, inital-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    h2 {
+      margin: 10px;
+      text-align:center;
+    }
+    h3 {
+      margin: 10px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
 
-    <img src="images/logo.jpg" alt="The Bishop's School Logo" width="324" height="307" />
+<div class="container">
 
-    <!-- Bookmark to links because they are important, but not fit to be at top -->
-    <p style="text-align:center;"><a href="#Links">Links</a></p>
+  <!-- Nav bar at top with links to bishops.com, email, directory, and select "my day" sections -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="navbar-brand" href="https://www.bishops.com/" target="_blank">
+            <img src="images/translogo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://bishops.myschoolapp.com/app/student#directory/895" target="_blank">Directory</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Day</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#studentmyday/progress" target="_blank">Progress</a></li>
+            <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#studentmyday/schedule" target="_blank">Schedule</a></li>
+            <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#studentmyday/assignment-center" target="_blank">Assignment Center</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Keep the heading format consistent -->
-    <h2>My Class Schedule</h2>
-    <table style="width:100%">
-      <tr>
-        <th>Block</th>
-        <th>Activity</th>
-        <th>Contact</th>
-        <th>Details</th>
-      </tr>
-      <tr>
-        <td>Adv</td>
-        <td>US Advisory &#127890;</td>
-        <td>Ben Heldt</td>
-        <td>Bentham B-28</td>
-      </tr>
-      <tr>
-        <td title="only on b and f days">Period 1</td>
-        <td>Hon Chemistry Lab &#129514;</td>
-        <td>Pam Reynolds</td>
-        <td>Science SCI-206</td>
-      </tr>
-      <tr>
-        <td>Period 2</td>
-        <td>Hon Chemistry &#9879;</td>
-        <td>Pam Reynolds</td>
-        <td>Science SCI-206</td>
-      </tr>
-      <tr>
-        <td>Period 3</td>
-        <td>Hon US History &#128214;</td>
-        <td>John Nagler</td>
-        <td>Scripps S-209</td>
-      </tr>
-      <tr>
-        <td>Period 4</td>
-        <td>Hon Spanish &#128483;</td>
-        <td>Nicole Uhland</td>
-        <td>Scripps S-205</td>
-      </tr>
-      <tr>
-        <td>Period 5</td>
-        <td>Eng II &#128218;</td>
-        <td>Laine Remignanti</td>
-        <td>Bentham B-25B</td>
-      </tr>
-      <tr>
-        <td>Period 6</td>
-        <td>Applied Computer Science &#128187;</td>
-        <td>Marcus Jaiclin</td>
-        <td>Science SCI-008</td>
-      </tr>
-      <tr>
-        <td>Period 7</td>
-        <td>Adv Hon Math: Multivariable Calculus &#129518;</td>
-        <td>Noble Kime</td>
-        <td>Bentham B-2A</td>
-      </tr>
+  <!-- For offcanvas of google apps -->
+  <div class="offcanvas" id="overview">
+    <div class="offcanvas-body">
+      <a href="https://drive.google.com/drive/my-drive" target="_blank">
+        <img src="images/drive.svg" class="img-thumbnail" alt="Drive" width="100" height="100">
+      </a>
+      <a href="https://docs.google.com/document/u/0/?tgif=d" target="_blank">
+        <img src="images/docs.svg" class="img-thumbnail" alt="Docs" width="100" height="100">
+      </a>
+      <a href="https://docs.google.com/presentation/u/0/?tgif=d" target="_blank">
+        <img src="images/slides.svg" class="img-thumbnail" alt="Slides" width="100" height="100">
+      </a>
+      <a href="https://docs.google.com/spreadsheets/u/0/?tgif=d" target="_blank">
+        <img src="images/sheets.svg" class="img-thumbnail" alt="Sheets" width="100" height="100">
+      </a>
+      <a href="https://docs.google.com/forms/u/0/?tgif=d" target="_blank">
+        <img src="images/forms.svg" class="img-thumbnail" alt="Forms" width="100" height="100">
+      </a>
+    </div>
+  </div>
+
+  <div class="container p-5 my-5 bg-danger text-white border">
+    <h1 style="text-align:center">The Bishop's School Hub</h1>
+  </div>
+
+  <img src="images/logo.jpg" class="mx-auto d-block" alt="The Bishop's School Logo" width="324" height="307"/>
+
+  <!-- Bookmark to links because they are important, but not fit to be at top -->
+  <div class="alert alert-info" style="text-align:center">
+    <strong>Links!</strong> Click <a href="#Links" class="alert-link">here</a> for links!
+  </div>
+
+  <!-- Table w/ dropdown menus for each class containing important links -->
+  <div class="container mt-3">
+    <div class="container p-2 my-2 bg-primary text-white border">
+      <h2>My Class Schedule</h2>
+    </div>
+    <table class="table table-hover table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Block</th>
+          <th>Activity</th>
+          <th>Contact</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Adv</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                US Advisory &#127890;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#advisorypage/25730776/bulletinboard" target="_blank">Bulletin Board</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Ben Heldt</td>
+          <td>Bentham B-28</td>
+        </tr>
+        <tr>
+          <td title="only on b and f days">Period 1</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Hon Chemistry Lab &#129514;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25521853/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/utilities/FileDownload.ashx?6E4101D5DE81DD2ED8A5960AD676A27A8E4AC31A0950FA64F869B1AE38D055D66445427812390F03" target="_blank">Class Syllabus</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://mynotebook.labarchives.com/" target="_blank">Lab Archives</a></li>
+                <li><a class="dropdown-item" href="https://myhome.cengagebrain.com/cb/dashboard.htm" target="_blank">Webassign</a></li>
+                <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1DxmSkeSGBnqTiiOcP3aWu8EwW1YkAhqj" target="_blank">Chem Folder</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Pam Reynolds</td>
+          <td>Science SCI-206</td>
+        </tr>
+        <tr>
+          <td>Period 2</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Hon Chemistry &#9879;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25521853/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/utilities/FileDownload.ashx?6E4101D5DE81DD2ED8A5960AD676A27A8E4AC31A0950FA64F869B1AE38D055D66445427812390F03" target="_blank"> Class Syllabus</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://mynotebook.labarchives.com/" target="_blank">Lab Archives</a></li>
+                <li><a class="dropdown-item" href="https://myhome.cengagebrain.com/cb/dashboard.htm" target="_blank">Webassign</a></li>
+                <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1DxmSkeSGBnqTiiOcP3aWu8EwW1YkAhqj" target="_blank">Chem Folder</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Pam Reynolds</td>
+          <td>Science SCI-206</td>
+        </tr>
+        <tr>
+          <td>Period 3</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Hon US History &#128214;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25681578/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://docs.google.com/document/d/1blAUkmquUXidEZRjhmQbvHrKq7jDcjyG3GC_X8wSnS4/edit" target="_blank">Class Syllabus</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>John Nagler</td>
+          <td>Scripps S-209</td>
+        </tr>
+        <tr>
+          <td>Period 4</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Hon Spanish III &#128483;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25536175/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://docs.google.com/document/d/1yut9xTMwW1N2VzmZhWGB3K3U27Gs1_USx91puuRYciU/edit" target="_blank">Class Syllabus</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://docs.google.com/document/d/1QaKDUJShUeEG2M2enn0Z7I_eaPTI9LsBTEleyZu5sq0/edit" target="_blank">Cycle Lesson Plans</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Nicole Uhland</td>
+          <td>Scripps S-205</td>
+        </tr>
+        <tr >
+          <td>Period 5</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Eng II &#128218;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25509667/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://docs.google.com/document/d/1EuKwn3tO8ra3u8fL4p7qHW5P0kAIQoNpNsOCZFs7muQ/edit" target="_blank">Class Syllabus</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Laine Remignanti</td>
+          <td>Bentham B-25B</td>
+        </tr>
+        <tr>
+          <td>Period 6</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Applied Computer Science &#128187;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25508703/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/ftpimages/613/download/download_7372137.pdf" target="_blank">Class Syllabus</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Marcus Jaiclin</td>
+          <td>Science SCI-008</td>
+        </tr>
+        <tr>
+          <td>Period 7</td>
+          <td>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Adv Hon Math: Multivariable Calculus &#129518;
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://bishops.myschoolapp.com/app/student#academicclass/25509743/0/bulletinboard" target="_blank">Bulletin Board</a></li>
+              </ul>
+            </div>
+          </td>
+          <td>Noble Kime</td>
+          <td>Bentham B-2A</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 
-    <h2>ACEG Day Schedule</h2>
-    <table style="width:100%">
-      <tr>
-        <th>Time</th>
-        <th>Activity</th>
-      </tr>
-      <tr>
-        <td>8:15 AM - 8:20 AM</td>
-        <td>Advisory</td>
-      </tr>
-      <tr>
-        <td>8:20 AM - 9:30 AM</td>
-        <td>1st Period</td>
-      </tr>
-      <tr>
-        <td>9:30 AM - 10:40 AM</td>
-        <td>2nd Period</td>
-      </tr>
-      <tr>
-        <td>10:40 AM - 10:55 AM</td>
-        <td>US Milk Break</td>
-      </tr>
-      <tr>
-        <td>10:55 AM - 12:05 PM</td>
-        <td>3rd Period</td>
-      </tr>
-      <tr>
-        <td>12:05 PM - 1:15 PM</td>
-        <td>4th Period</td>
-      </tr>
-      <tr>
-        <td>1:15 PM - 1:55 PM</td>
-        <td>Lunch</td>
-      </tr>
-      <tr>
-        <td>1:55 PM - 2:55 PM</td>
-        <td>Period X</td>
-      </tr>
-      <tr>
-        <td>2:55 PM - 3:20 PM</td>
-        <td>Office Hours</td>
-      </tr>
+  <div class="container mt-3">
+    <div class="container p-2 my-2 bg-success text-white border">
+      <h3>ACEG Day Schedule</h3>
+    </div>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8:15 AM - 8:20 AM</td>
+          <td>Advisory</td>
+        </tr>
+        <tr>
+          <td>8:20 AM - 9:30 AM</td>
+          <td>1st Period</td>
+        </tr>
+        <tr>
+          <td>9:30 AM - 10:40 AM</td>
+          <td>2nd Period</td>
+        </tr>
+        <tr>
+          <td>10:40 AM - 10:55 AM</td>
+          <td>US Milk Break</td>
+        </tr>
+        <tr>
+          <td>10:55 AM - 12:05 PM</td>
+          <td>3rd Period</td>
+        </tr>
+        <tr>
+          <td>12:05 PM - 1:15 PM</td>
+          <td>4th Period</td>
+        </tr>
+        <tr>
+          <td>1:15 PM - 1:55 PM</td>
+          <td>Lunch</td>
+        </tr>
+        <tr>
+          <td>1:55 PM - 2:55 PM</td>
+          <td>Period X</td>
+        </tr>
+        <tr>
+          <td>2:55 PM - 3:20 PM</td>
+          <td>Office Hours</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 
-    <h2>BDF Day Schedule</h2>
-    <table style="width:100%">
-      <tr>
-        <th>Time</th>
-        <th>Activity</th>
-      </tr>
-      <tr>
-        <td>8:15 AM - 8:20 AM</td>
-        <td>Advisory</td>
-      </tr>
-      <tr>
-        <td>8:20 AM - 9:30 AM</td>
-        <td>1st Period</td>
-      </tr>
-      <tr>
-        <td>9:35 AM - 10:00 AM</td>
-        <td>US Enrichment 1</td>
-      </tr>
-      <tr>
-        <td>10:00 AM - 10:25 AM</td>
-        <td>US Enrichment 2</td>
-      </tr>
-      <tr>
-        <td>10:25 AM - 10:40 AM</td>
-        <td>US Milk Break</td>
-      </tr>
-      <tr>
-        <td>10:40 AM - 11:50 AM</td>
-        <td>2nd Period</td>
-      </tr>
-      <tr>
-        <td>11:50 AM - 1:00 PM</td>
-        <td>3rd Period</td>
-      </tr>
-      <tr>
-        <td>1:00 PM - 1:45 PM</td>
-        <td>US Lunch</td>
-      </tr>
-      <tr>
-        <td>1:45 PM - 2:55 PM</td>
-        <td>4th Period</td>
-      </tr>
-      <tr>
-        <td>2:55 PM - 3:20 PM</td>
-        <td>Office Hours</td>
-      </tr>
+  <div class="container mt-3">
+    <div class="container p-2 my-2 bg-success text-white border">
+      <h3>BDF Day Schedule</h3>
+    </div>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8:15 AM - 8:20 AM</td>
+          <td>Advisory</td>
+        </tr>
+        <tr>
+          <td>8:20 AM - 9:30 AM</td>
+          <td>1st Period</td>
+        </tr>
+        <tr>
+          <td>9:35 AM - 10:00 AM</td>
+          <td>US Enrichment 1</td>
+        </tr>
+        <tr>
+          <td>10:00 AM - 10:25 AM</td>
+          <td>US Enrichment 2</td>
+        </tr>
+        <tr>
+          <td>10:25 AM - 10:40 AM</td>
+          <td>US Milk Break</td>
+        </tr>
+        <tr>
+          <td>10:40 AM - 11:50 AM</td>
+          <td>2nd Period</td>
+        </tr>
+        <tr>
+          <td>11:50 AM - 1:00 PM</td>
+          <td>3rd Period</td>
+        </tr>
+        <tr>
+          <td>1:00 PM - 1:45 PM</td>
+          <td>US Lunch</td>
+        </tr>
+        <tr>
+          <td>1:45 PM - 2:55 PM</td>
+          <td>4th Period</td>
+        </tr>
+        <tr>
+          <td>2:55 PM - 3:20 PM</td>
+          <td>Office Hours</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 
-    <h2>Extra Reminders</h2>
-    <!-- I don't know a lot of the below information because the year just started but I'll definitely fill it out when I do know it -->
-    <ol>
-      <li>Chapel is on _ days</li>
-      <li>DEIJ meetings are on __ days</li>
-      <li>Student time is on __ days</li>
-    </ol>
-
-
-    <h2 id="Links">Links</h2>
-    <ul style="list-style-type:square;">
-      <li><a href="https://bishops.myschoolapp.com/ftpimages/613/download/download_5612012.pdf?_=1661368671771" target="_blank">Daily Schedule</a></li>
-      <li><a href="https://bishops.myschoolapp.com/app/student#resourceboarddetail/750" target="_blank">Daily Bulletin</a></li>
-      <li><a href="https://resources.finalsite.net/images/v1656522467/bishopscom/l3ap7ecp5iwhwxs2whfl/2022-2023CalendarDates.pdf" target="_blank">School Year Calender</a></li>
+  <!-- List groups & badges -->
+  <div class="container p-2 my-5 border bg-warning text-white border">
+    <h2>Enrichment Activities</h2>
+  </div>
+  <div class="container mt-3">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Student Time
+        <span class="badge bg-primary rounded-pill">B</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        DEIJ Meetings
+        <span class="badge bg-primary rounded-pill">D</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Chapel
+        <span class="badge bg-primary rounded-pill">F</span>
+      </li>
     </ul>
+  </div>
 
-  </body>
+  <!-- Grid w/ 4 different sizes of cards -->
+  <div class="container">
+    <div class="container p-2 my-5 border bg-warning text-white border">
+      <h2 id="Links">Links</h2>
+    </div>
+    <div class="container-fluid mt-3">
+      <button class="btn btn-primary mx-auto d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#overview">Google Apps</button>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:210px">
+          <img class="card-img-top" src="images/bulletin.png" alt="Daily Bulletin" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://bishops.myschoolapp.com/app/student#resourceboarddetail/750" target="_blank">Daily Bulletin</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:210px">
+          <img class="card-img-top" src="images/calender.png" alt="Calendar Dates" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://resources.finalsite.net/images/v1656522467/bishopscom/l3ap7ecp5iwhwxs2whfl/2022-2023CalendarDates.pdf" target="_blank">Calendar Dates</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:210px">
+          <img class="card-img-top" src="images/schedule.png" alt="Academic Schedule" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://bishops.myschoolapp.com/ftpimages/613/download/download_5612012.pdf?_=1663359255478" target="_blank">Academic Schedule</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:210px">
+          <img class="card-img-top" src="images/athletics.png" alt="Athletics Calendar" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://bishops.myschoolapp.com/app/student#calendar" target="_blank">Athletics Calendar</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:210px">
+          <img class="card-img-top" src="images/lunch.png" alt="Lunch Menu" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://bishops.myschoolapp.com/app/student#resourceboarddetail/24328" target="_blank">Lunch Menu</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card shadow p-3 mb-5 bg-body rounded" style="width:220px">
+          <img class="card-img-top" src="images/library.png" alt="Library Databases" style="width:100%">
+          <div class="card-body">
+            <div class="col"><a href="https://bishops.myschoolapp.com/app/student#topicdetail/234077/21835189/21835189/517910/0/0" target="_blank">Library Databases</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
 </html>
